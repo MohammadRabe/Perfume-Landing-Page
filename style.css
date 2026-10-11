@@ -588,8 +588,8 @@ body { background: var(--paper); color: var(--ink); }
 .story-photo-caption b { font-size: 26px; }
 .photo-index { right: 10px; bottom: 2px; }
 @keyframes story-flowers-float {
-  0%, 100% { transform: translateY(0) rotate(-2deg); }
-  50% { transform: translateY(-13px) rotate(2deg); }
+  0%, 100% { transform: translateY(0) rotate(-9deg); }
+  50% { transform: translateY(-10px) rotate(-6deg); }
 }
 @keyframes rose-detail-drift {
   0%, 100% { transform: translate3d(0,0,0) rotate(-7deg); }
@@ -645,7 +645,7 @@ body { background: var(--paper); color: var(--ink); }
 
 /* Keep the supplied portrait rose uncropped at every screen size. */
 .story-photo {
-  width: min(100%, 320px);
+  width: min(100%, 260px);
   height: auto;
   aspect-ratio: 2 / 3;
   border-radius: 3px;
@@ -661,5 +661,7 @@ body { background: var(--paper); color: var(--ink); }
 .story-photo:before { background: transparent; }
 .story-photo:after { background: transparent; }
 @media (max-width: 680px) {
-  .story-photo { width: min(100%, 280px); }
+  .story-photo { width: min(50vw, 165px); }
 }
+
+.order-form { scroll-margin-top: 24px; }

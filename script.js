@@ -205,7 +205,7 @@ function applyStore() {
       <div class="catalog-card-media"><img src="${escapeHTML(product.image)}" alt="${escapeHTML(product.name)}" loading="lazy"><span class="product-tag">${product.id === STORE.product.id ? "اختيارنا لكِ" : "عطر أزهار"}</span>${product.id === STORE.product.id && product.discountPercent ? `<span class="discount-badge"><b>${product.discountPercent}%</b><small>OFF</small></span>` : ""}</div>
       <div class="catalog-card-info"><h3>${escapeHTML(product.name)}</h3><small>${escapeHTML(product.size)} · ${escapeHTML(product.type)}</small>
         <p>${escapeHTML(product.description)}</p><div class="catalog-card-buy"><div><b>${escapeHTML(product.price)}</b>${product.oldPrice ? `<del>${escapeHTML(product.oldPrice)}</del>` : ""}</div>
-          <a href="#order" data-select-product="${escapeHTML(product.id)}" aria-label="اطلبي ${escapeHTML(product.name)}">اطلبيه <span>↙</span></a></div>
+          <a href="#orderForm" data-select-product="${escapeHTML(product.id)}" aria-label="اطلبي ${escapeHTML(product.name)}">اطلبيه <span>↙</span></a></div>
       </div>
     </article>`).join("");
   document.querySelector("#productDots").innerHTML = STORE.products.map((product, index) =>
@@ -409,7 +409,7 @@ function setupProductSelection() {
     if (!product) return;
     STORE.product = product;
     applyStore();
-    document.querySelector("#order").scrollIntoView({ behavior: "smooth", block: "start" });
+    document.querySelector("#orderForm").scrollIntoView({ behavior: "smooth", block: "start" });
   });
 }
 

@@ -551,7 +551,7 @@ body { background: var(--paper); color: var(--ink); }
   isolation: isolate;
   border-radius: 48% 52% 46% 54% / 43% 45% 55% 57%;
   background: radial-gradient(ellipse at 50% 52%, #f0e1df 0%, #f5eeea 57%, transparent 74%);
-  animation: story-flowers-float 5.5s ease-in-out infinite;
+  animation: story-flowers-float 4.8s ease-in-out infinite;
   filter: drop-shadow(0 24px 30px rgba(69, 39, 48, .12));
 }
 .story-photo img {
@@ -588,8 +588,8 @@ body { background: var(--paper); color: var(--ink); }
 .story-photo-caption b { font-size: 26px; }
 .photo-index { right: 10px; bottom: 2px; }
 @keyframes story-flowers-float {
-  0%, 100% { transform: translateY(0) rotate(-.7deg); }
-  50% { transform: translateY(-11px) rotate(.7deg); }
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-13px) rotate(2deg); }
 }
 @keyframes rose-detail-drift {
   0%, 100% { transform: translate3d(0,0,0) rotate(-7deg); }
@@ -630,4 +630,36 @@ body { background: var(--paper); color: var(--ink); }
   @supports (height: 100svh) {
     .hero { min-height: calc(100svh - 100px); }
   }
+}
+
+@media (max-width: 680px) {
+  [data-reveal="left"],
+  [data-reveal="right"] { transform: translateY(22px); }
+  .story-photo-wrap { overflow-x: clip; }
+  .story-photo {
+    width: min(100%, 340px);
+    max-width: 100%;
+    filter: drop-shadow(0 16px 16px rgba(69, 39, 48, .1));
+  }
+}
+
+/* Keep the supplied portrait rose uncropped at every screen size. */
+.story-photo {
+  width: min(100%, 320px);
+  height: auto;
+  aspect-ratio: 2 / 3;
+  border-radius: 3px;
+  background: transparent;
+}
+.story-photo img {
+  border-radius: 3px;
+  object-fit: contain;
+  object-position: center;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+.story-photo:before { background: transparent; }
+.story-photo:after { background: transparent; }
+@media (max-width: 680px) {
+  .story-photo { width: min(100%, 280px); }
 }

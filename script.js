@@ -9,7 +9,7 @@ const MOCK_PRODUCTS = [
     oldPrice: 999,
     currency: "ج.م",
     image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1100&q=82",
-    storyImage: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1100&q=82",
+    storyImage: "assets/pink-rose-with-stem.png",
     description: "حضور ناعم يبدأ من أول رشة. تركيبة زهرية أنثوية ترافقكِ في يومكِ وتترك لمسة تشبهكِ."
   },
   {
@@ -21,7 +21,7 @@ const MOCK_PRODUCTS = [
     oldPrice: 1049,
     currency: "ج.م",
     image: "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1100&q=82",
-    storyImage: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1100&q=82",
+    storyImage: "assets/pink-rose-with-stem.png",
     description: "عطر وردي دافئ بلمسات ناعمة، مناسب لأمسياتكِ ولحظاتكِ الخاصة."
   },
   {
@@ -33,7 +33,7 @@ const MOCK_PRODUCTS = [
     oldPrice: null,
     currency: "ج.م",
     image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=1100&q=82",
-    storyImage: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1100&q=82",
+    storyImage: "assets/pink-rose-with-stem.png",
     description: "نفحات ياسمين منعشة وخفيفة، ترافق يومكِ بلمسة أنثوية بسيطة."
   }
 ];

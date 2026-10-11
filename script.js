@@ -93,7 +93,7 @@ const STORE = {
   // اربطي النموذج برقم واتساب أو خدمة طلبات لإرسال الطلبات فعليًا.
   order: {
     button: "اطلبي عطر يدوم",
-    confirmation: "شكرًا لطلبكِ! تم استلام بياناتكِ في هذه النسخة التجريبية. اربطي النموذج برقم واتساب أو خدمة الطلبات لتصلك الطلبات فعليًا."
+    confirmation: "سيتم تحويلكِ برسالة جاهزة إلى واتساب لتأكيد طلبكِ."
   }
 };
 
@@ -343,7 +343,7 @@ function setupReviewInteractions() {
     if (!sectionVisible || interacting || reviewInUse || document.hidden || STORE.reviews.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     reviewTimer = window.setInterval(() => {
       showReview((activeReviewIndex + 1) % STORE.reviews.length);
-    }, 5000);
+    }, 3000);
   };
   const pauseForInteraction = () => {
     interacting = true;
@@ -440,7 +440,7 @@ function setupProductCarousel() {
       const delta = getComputedStyle(track).direction === "rtl"
         ? cardBounds.right - trackBounds.right
         : cardBounds.left - trackBounds.left;
-      track.scrollBy({ left: delta, behavior: "smooth" });
+      track.scrollBy({ left: delta, top: 0, behavior: "smooth" });
     }
     updateProductCarousel(nextIndex);
   };
@@ -456,7 +456,7 @@ function setupProductCarousel() {
     autoplayTimer = window.setInterval(() => {
       const cards = track.querySelectorAll(".catalog-card");
       if (cards.length > 1) moveTo(activeProductSlide === cards.length - 1 ? 0 : activeProductSlide + 1);
-    }, 2200);
+    }, 1500);
   };
   const pauseForInteraction = () => {
     interacting = true;
@@ -495,10 +495,10 @@ function setupProductCarousel() {
   document.addEventListener("visibilitychange", startAutoplay);
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(([entry]) => {
-      sectionVisible = entry.isIntersecting && entry.intersectionRatio >= .25;
+      sectionVisible = entry.isIntersecting && entry.intersectionRatio >= .65;
       if (sectionVisible) startAutoplay();
       else stopAutoplay();
-    }, { threshold: [.25] });
+    }, { threshold: [.65] });
     observer.observe(section);
   } else {
     sectionVisible = true;
